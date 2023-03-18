@@ -4,8 +4,10 @@ import { ref, reactive, computed, watch } from 'vue';
 import axios from 'axios';
 import {RouterLink} from 'vue-router'
 
+
  
     const baseUrl = "https://api.github.com/users";
+    const heroImage= ref("https://github.githubassets.com/images/modules/site/home/globe.jpg")
     const userInput = ref('');
     const users = reactive([]);
     const isLoading = ref(false);
@@ -47,38 +49,34 @@ import {RouterLink} from 'vue-router'
 </script>
 
 <template>
-  <div >
-    <div class="small_container">
-      <div class="action_text">
-        <div>
-         <h2>Wanna View my profile?</h2>
-       </div>
-       <RouterLink to ="/myprofile" >
-         <div class="btn" id="btns">
-           <button >Click</button>
-         </div>
-       </RouterLink>
-       </div>
-      <div class="search_action">
-        <div>
-        <h2>Looking for a GitHub profile?</h2>
-      </div>
-      <div>
-        <input type="text" placeholder="Enter github username" v-model="userInput" />
-        <button @click="findUser" class="btn">search</button>
-      </div>
-      </div>
-    
-   
+  <div class='landing_container'>
+    <div class="input_container">
+      <h2>Search <br/> GitHub user Profile</h2>
+      <div class="inputs">
+     <input type="text" placeholder="Enter github username" v-model="userInput" />
+     <button @click="findUser" class="btn">search</button>
+    </div>
+    <div class="myprofile_btn">
+     <h2>View my Profile</h2>
+     <RouterLink to ="/myprofile" >
+      
+        <button class="btn" id="btns">Click</button>
+      
+    </RouterLink>
   </div>
- 
+    </div>
+    <div>
+      <img :src='heroImage' alt="My Image"  />
+    </div>
+    </div>
+   
+  
 
     <div v-if="users"  class="card">
       <div v-for="user in users" :key="user.id" >
         <div class="home_link"><a :href='user.html_url' target="_blank"  rel="noreferrer" ><font-awesome-icon icon="external-link" /></a></div>
           <img v-bind:src='user.avatar_url' target="_blank" alt="" />
-          <h3>{{ user.name }}</h3>
-          <h4>@{{ user.login }}</h4>
+          <h4>{{ user.name }}</h4>
        
         <div class="smaller_cards">
           <div class="smallest_cards">
@@ -96,151 +94,178 @@ import {RouterLink} from 'vue-router'
          
         </div>
       </div>
-    </div>
-
+   
   </div>
 </template>
 
 
 
 <style scoped>
-.action_text{
+
+.landing_container{
   display:flex;
-  text-align: center;
   justify-content: center;
-  margin-top: 5rem;
-  gap:5rem;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-.search_action{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-top: 4rem;
-  gap: 5rem;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-button{
-  height:3rem;
-}
-
-input{
-  height:3rem;
-  text-align: center;
-  font-size: 1.5rem;
-  border-radius: 5px;
-}
-#btns button{
-  width: 5rem;
-  color: var(--color-white);
-}
-
-.small_container{
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap:10rem;
-  
-}
-
-.card img{
-  border-radius: 10rem;
-  margin-top: 1rem;
-  width: 7rem;
-  cursor: pointer;
-  
-}
-.card{
-  max-width:40rem;
-  background-color: var(--color-white);
+  justify-content: space-around;
   margin: 0 auto;
-  margin-top: 2rem;
-  color:var(--color-black);
-  font-size: 1.5rem;
-}
-h4{
-  font-size: 1rem;
-}
-h3{
-  font-size: 1.4rem;
-}
-.smaller_cards{
-  display:flex;
-  gap:3rem;
   text-align: center;
-  justify-content: center;
-  margin-top: 1.2rem; 
-  transform: translateY(-1rem);
+  margin-top: 3rem;
+  
+  
+}
+.landing_container img{
+width:40rem;
+height:40rem
 }
 
-.smallest_cards{
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  height: 7rem;
-  padding-top: 1rem;
+.input_container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap:3rem
+}
+input{
+  width:30rem;
   padding: 1rem;
 }
-.smaller_cards h3{
-  padding-top: 1rem;
+.myprofile_btn{
+  padding-top: 4rem;
+}
+.myprofile_btn button{
+  margin-top: 3rem;
+}
+
+.card{
+  background-color: var(--color-white);
+  width: 35rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin:0 auto;
+  margin-top: 1rem;
+  flex-direction: column;
+
+}
+.inputs{
+  display:flex;
+  justify-content: center;
+  text-align: center;
+}
+.card img{
+  background-color: var(--color-white);
+  border-radius: 10rem;
+  margin-top: 1.3rem;
+  width: 10rem;
+  cursor: pointer;
+}
+.smaller_cards{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+}
+.smallest_cards{
+  background-color: var(--color-primary);
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+h4{
+  color: var(--light-color);
+  font-size: 1.2rem;
 }
 .home_link a{
-  color: var(--main-color);
-  padding-right: 1rem;
+  color: var(--light-color);
   padding-top: 1rem;
+  padding-right: 1rem;
 }
-@media screen and (max-width:795px) {
-  
-  .search_action{
-    line-height: 3rem;
-    gap:2rem
-  }
-  .small_container{
-    gap:1.5rem;
-  }
-  .action_text{
-    gap:2rem
-  }
-  .smaller_cards{
-    gap:1rem;
-    width:auto;
-
-    
-    
-    
-  }
-  .smallest_cards{
-    padding: 0;
-    padding-top: 1rem;
-  }
- 
+h2{
+  font-size: 4rem;
+  line-height: 5rem;
 }
-@media screen and (min-width:799px) and (max-width:1000px){
-  .action_text{
-    margin-top: 10rem;
-  }
-
-  .search_action{
-    margin-top: 10rem;
-  }
+br{
+  text-align: start;
+}
+#btns{
+  width: 30rem;
+  padding: 1rem;
 }
 
-@media screen and (max-width:300px){
-  .action_text{
-    line-height:3rem
+
+
+@media screen and (max-width:700px) {
+  .landing_container{
+    flex-direction: column;
+    
   }
-  .small_container{
-    margin-top: 0.2rem;
+  br{
+    display: none;
+  }
+  h2{
+    font-size: 2.3rem;
   }
   input{
-    height:3rem;
+    width:20rem;
+   
+}
+.inputs button{
+  width:20rem;
+  padding: 1rem;
+ 
+}
+.inputs{
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+}
+#btns{
+  width: 20rem;
+}
+.landing_container img{
+  width:30rem;
+  height:30rem
+  }
+}
+
+
+
+  @media screen and (min-width:700px) {
+    .input_container h2{
+      text-align: start;
+    }
+ 
+}
+@media screen and (max-width:370px){
+  h2{
+    font-size: 1.8rem;
     text-align: center;
-    font-size: 1.1rem;
   }
-  #btns button{
-width: 5rem;
+  .landing_container img{
+    width:25rem;
+    height:25rem
+    }
+}
+
+@media screen and (min-width:750px) and (max-width:1000px){
+  .landing_container{
+    margin-top: 15rem;
+   
   }
+}
+
+  @media screen and (max-width:283px){
+    h2{
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    .landing_container img{
+      width:20rem;
+      height:20rem;
+      margin: 0 auto;
+      text-align: center;
+      }
+     
 }
 
 

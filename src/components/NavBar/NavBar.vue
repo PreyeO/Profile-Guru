@@ -8,6 +8,7 @@ import {ref} from 'vue'
 
 const portfolioLink = ref('https://preyeomusuku.vercel.app/')
 
+
    
 const isMenuOpen = ref(false);
 
@@ -93,7 +94,7 @@ button {
     display: none;
   }
 
-  button{
+  buttong{
     display: block;
     cursor:pointer;
     background: transparent;

@@ -13,13 +13,13 @@ letter-spacing: 1px;
 word-spacing: 1px;
 }
 :root{
-  --main-color:#1E1629;
+  --main-color:#040D21;
   --main-secondary-color:#342250;;
-  --light-color:#e2afff;
+  --light-color:#7EE787;
   --color-bg:#0e1129;
   --color-bg-variant:#002855;
   --color-black:#2b2d42;
-  --color-primary:#b5179e;
+  --color-primary:#584089;
   --color-primary-variant:rgba(255,255,255,0.6);
   --color-white:#f1f1f1;
   --color-light:rgba(255,255,255,0.6);
