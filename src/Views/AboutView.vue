@@ -2,9 +2,9 @@
 <script setup>
 import {ref} from 'vue'
 import {RouterLink} from 'vue-router'
-
-
 const backgroundImage = ref('src/assets/error.png');
+
+// const backgroundImage = ref('src/assets/error.png');
 
 
 </script>

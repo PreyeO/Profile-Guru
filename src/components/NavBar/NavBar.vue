@@ -110,7 +110,7 @@ button {
     height: 100%;
     background-color: rgba(50, 40, 40, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5rem);
     justify-content: center;
     text-align: center;
     

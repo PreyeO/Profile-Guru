@@ -122,17 +122,21 @@ import {RouterLink} from 'vue-router'
   flex-wrap: wrap;
   flex-direction: column;
 }
+button{
+  height:3rem;
+}
 
 input{
   height:3rem;
   text-align: center;
   font-size: 1.5rem;
+  border-radius: 5px;
 }
 #btns button{
   width: 10rem;
   color: var(--color-white);
-
 }
+
 .small_container{
   justify-content: center;
   display: flex;
@@ -196,7 +200,7 @@ h3{
     gap:1.5rem;
   }
   .action_text{
-    gap:2.5rem
+    gap:2rem
   }
   .smaller_cards{
     gap:1rem;
