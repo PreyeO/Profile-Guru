@@ -34,7 +34,7 @@ const isMenuOpen = ref(false);
     
    </div>
  
-    <div >
+    <div>
       <ul v-if="isMenuOpen" :aria-expanded="isMenuOpen" >
     <RouterLink to ="/myprofile" active-class="active"><li>Home</li></RouterLink>
     <RouterLink to ="*" active-class="active"><li>About</li></RouterLink>
@@ -83,6 +83,7 @@ nav a:hover {
 }
 button {
   display: none;
+  
 }
 .logo-span{
   color:var(--light-color)
@@ -92,10 +93,12 @@ button {
     display: none;
   }
 
-  button {
+  button{
     display: block;
     cursor:pointer;
     background: transparent;
+    width: 3rem;
+    height: 2rem;
     
   }
  
@@ -121,17 +124,17 @@ button {
   }
  
   #logo{
-    position: fixed;
     z-index: 1;
     font-size: 1.7rem;
     text-align: right;
-   
+    position: relative;
   }
   .icon{
-    position: fixed;
+   position: relative;
     color:white;
     z-index: 1;
     transform: translateX(15rem);
+    width: 2rem;
   }
   
 }

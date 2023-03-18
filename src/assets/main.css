@@ -13,13 +13,12 @@ body{
   overflow-x:hidden
 }
 html{
- 
   font-size: 62.5%;   
   overflow-x: hidden
 }
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
   display: none;
-}
+} */
 .container{
   margin:0 auto;
   text-align: center;
@@ -62,6 +61,7 @@ section{
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 4rem;
+  overflow-x:hidden
 }
 
 #btns:hover{

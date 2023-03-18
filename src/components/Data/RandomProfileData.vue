@@ -108,7 +108,7 @@ import {RouterLink} from 'vue-router'
   display:flex;
   text-align: center;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: 5rem;
   gap:5rem;
   flex-wrap: wrap;
   flex-direction: column;
@@ -133,7 +133,7 @@ input{
   border-radius: 5px;
 }
 #btns button{
-  width: 10rem;
+  width: 5rem;
   color: var(--color-white);
 }
 

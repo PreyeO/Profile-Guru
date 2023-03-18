@@ -81,7 +81,7 @@ img:hover{
   display:flex;
   justify-content: center;
   text-align: center;
-  gap: 6rem;
+  gap: 4.5rem;
   padding-top: 1.7rem;
   font-size: 1rem;
   font-size: 1.4rem;
@@ -138,6 +138,9 @@ font-size: 1.3rem;
   .smaller_cards{
     gap:2rem;
     
+  }
+  .location{
+    gap:4rem
   }
 }
 @media screen and (max-width:300px) {

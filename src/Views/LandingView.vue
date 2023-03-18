@@ -6,13 +6,6 @@ import Footer from '../components/Footer/Footer.vue';
 import LandingImage from '../../src/assets/Group.svg'
 
 
-
-// const profilePicsPath = ref('src/assets/profiles.png');
-// const myImage = ref(null);
-
-
-
-
 const GitHubHeader= ref("https://cdn3.iconfinder.com/data/icons/inficons/512/github.png")
 </script>
 
@@ -27,7 +20,7 @@ const GitHubHeader= ref("https://cdn3.iconfinder.com/data/icons/inficons/512/git
       <div class="container">
     <div class="profile_images">
       <img :src='LandingImage' alt="My Image"  />
-    <!-- <img ref="myImage" src="src/assets/profiles.png" alt="My Image"  /> -->
+    
     </div>
   <RandomProfileData />
 </div>
@@ -85,7 +78,7 @@ position: relative;
     margin: 0 auto;
   }
   .profile_images img{
-    max-width:80%;
+    max-width:100%;
   }
   .container{
     margin-top: 5rem;

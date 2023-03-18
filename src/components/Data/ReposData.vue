@@ -77,11 +77,13 @@ const nextPage = () => {
   justify-content: center;
   gap: 3rem;
   padding-top: 1.3rem;
+  overflow-x: hidden;
+ 
 
 }
 .repos_card {
   text-align: center;
-  min-width: 35rem;
+  max-width: 35rem;
   font-size: 1.5rem;
   color: #dfd3d3;
   height: 20rem;
@@ -94,6 +96,8 @@ const nextPage = () => {
   padding-top: 2rem;
   margin-top: 5rem;
   border-bottom-left-radius: 10rem;
+  overflow-x: hidden;
+ z-index: 1rem;
 }
 .repos_card>h2{
   padding-top: 3rem;
