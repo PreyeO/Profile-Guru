@@ -7,7 +7,7 @@ import Footer from '../components/Footer/Footer.vue';
 
 
 const profilePicsPath = ref('src/assets/profiles.png');
-const myImage = ref(null);
+// const myImage = ref(null);
 
 
 
@@ -25,7 +25,8 @@ const GitHubHeader= ref("https://cdn3.iconfinder.com/data/icons/inficons/512/git
   <section>
       <div class="container">
     <div class="profile_images">
-    <img ref="myImage" src="src/assets/profiles.png" alt="My Image"  />
+      <img :src="profilePicsPath" alt="My Image"  />
+    <!-- <img ref="myImage" src="src/assets/profiles.png" alt="My Image"  /> -->
     </div>
   <RandomProfileData />
 </div>
