@@ -3,29 +3,23 @@
 import { ref } from 'vue';
 import RandomProfileData from '../components/Data/RandomProfileData.vue';
 import Footer from '../components/Footer/Footer.vue';
-import LandingImage from '../../src/assets/Group.svg'
 
 
 const GitHubHeader= ref("https://cdn3.iconfinder.com/data/icons/inficons/512/github.png")
+
 </script>
 
 
 <template>
   <header class='users_header'>
-
     <img :src="GitHubHeader" alt=""/>
     <span>GitHub</span>
     </header>
-  <section>
-      <div class="container">
-    <div class="profile_images">
-      <img :src='LandingImage' alt="My Image"  />
-    
-    </div>
+   <div container>
   <RandomProfileData />
-</div>
+  </div>
 <Footer />
-  </section>
+  
 </template>
 
 <style scoped>
@@ -35,6 +29,7 @@ const GitHubHeader= ref("https://cdn3.iconfinder.com/data/icons/inficons/512/git
   margin: o auto;
  
 }
+
 .profile_images {
 display:flex;
 justify-content: center;
@@ -54,6 +49,9 @@ position: relative;
     padding: 0 2rem;
     font-size: 20px;
     padding-top: 1rem;
+    text-align: center;
+    width: 100%;
+    
     
   
   }
@@ -65,29 +63,9 @@ position: relative;
     margin-bottom: 1rem;
   }
 @media screen and (max-width: 715px){
-  .profile_images img{
-    max-width:50rem;
-  }
-}
-@media screen and (max-width: 500px){
-  .profile_images  {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .profile_images img{
-    max-width:100%;
-  }
-  .container{
-    margin-top: 5rem;
-  }
-}
-@media screen and (max-width: 300px){
-.container{
-  margin-top: 2rem;
-}
+ .users_header{
+  text-align: center;
+ }
 }
 
 

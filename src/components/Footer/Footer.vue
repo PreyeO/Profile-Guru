@@ -19,5 +19,8 @@
   .footer{
     font-size: 1.2rem;
   }
+  .me{
+    color:red
+  }
 }
 </style>
