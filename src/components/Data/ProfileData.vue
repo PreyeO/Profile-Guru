@@ -1,4 +1,14 @@
 
+<script setup>
+import { useFetchData } from './useFetchData.vue';
+
+
+const { data, error, isLoading } = useFetchData("https://api.github.com/users/PreyeO");
+const now = new Date();
+
+
+</script>
+
 <template>
   <div>
   <div v-if="isLoading">Loading...</div>
@@ -39,15 +49,6 @@
 </div>
 </template>
 
-<script setup>
-import { useFetchData } from './useFetchData.vue';
-
-
-const { data, error, isLoading } = useFetchData("https://api.github.com/users/PreyeO");
-const now = new Date();
-
-
-</script>
 <style scoped>
 img{
   border-radius: 10rem;

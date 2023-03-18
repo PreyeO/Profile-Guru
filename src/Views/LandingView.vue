@@ -1,4 +1,16 @@
 
+<script setup>
+import { ref } from 'vue';
+import RandomProfileData from '../components/Data/RandomProfileData.vue';
+import Footer from '../components/Footer/Footer.vue';
+import error from '@/assets/Images/profiles.png'
+
+
+// const profilePicsPath = ref('src/assets/Images/profiles.png');
+const GitHubHeader= ref("https://cdn3.iconfinder.com/data/icons/inficons/512/github.png")
+</script>
+
+
 <template>
   <header class='users_header'>
 
@@ -8,24 +20,13 @@
   <section>
       <div class="container">
     <div class="profile_images">
-    <img :src="profilePicsPath" alt="My Image" />
+    <img :src="error" alt="My Image" />
     </div>
   <RandomProfileData />
 </div>
 <Footer />
   </section>
 </template>
-
-
-<script setup>
-import { ref } from 'vue';
-import RandomProfileData from '../components/Data/RandomProfileData.vue';
-import Footer from '../components/Footer/Footer.vue';
-
-
-const profilePicsPath = ref('src/assets/Images/profiles.png');
-const GitHubHeader= ref("https://cdn3.iconfinder.com/data/icons/inficons/512/github.png")
-</script>
 
 <style scoped>
 

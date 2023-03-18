@@ -1,3 +1,51 @@
+
+<script setup>
+import { ref, reactive, computed, watch } from 'vue';
+import axios from 'axios';
+import {RouterLink} from 'vue-router'
+
+ 
+    const baseUrl = "https://api.github.com/users";
+    const userInput = ref('');
+    const users = reactive([]);
+    const isLoading = ref(false);
+    const error = ref(false);
+
+
+    const findUser = async () => {
+      isLoading.value = true;
+      try{
+      if (userInput.value !== "") {
+        const { data } = await axios.get(baseUrl + "/" + userInput.value);
+        users.splice(0, users.length, data);
+        userInput.value = "";
+        console.log(users)
+      }
+      } catch(error) {
+        error.value = err.message;
+        isLoading.value = false;
+      }
+      
+      return {
+      userInput,
+      users,
+      findUser
+    };
+    };
+
+    const userFound = computed(() => {
+      return users.length > 0;
+    });
+
+    watch(userFound, (val) => {
+      if (val) {
+        console.log(users);
+      }
+    });
+
+  
+</script>
+
 <template>
   <div >
     <div class="small_container">
@@ -53,55 +101,7 @@
   </div>
 </template>
 
-<script setup>
-import { ref, reactive, computed, watch } from 'vue';
-import axios from 'axios';
-import {RouterLink} from 'vue-router'
 
- 
-    
-  
-    const baseUrl = "https://api.github.com/users";
-    const userInput = ref('');
-    const users = reactive([]);
-    const isLoading = ref(false);
-    const error = ref(false);
-
-
-    const findUser = async () => {
-      isLoading.value = true;
-      try{
-      if (userInput.value !== "") {
-        const { data } = await axios.get(baseUrl + "/" + userInput.value);
-        users.splice(0, users.length, data);
-        userInput.value = "";
-        console.log(users)
-      }
-      } catch(error) {
-        error.value = err.message;
-        isLoading.value = false;
-      }
-      
-      return {
-      userInput,
-      users,
-      findUser
-    };
-    };
-
-    const userFound = computed(() => {
-      return users.length > 0;
-    });
-
-    watch(userFound, (val) => {
-      if (val) {
-        console.log(users);
-      }
-    });
-
-  
-
-</script>
 
 <style scoped>
 .action_text{

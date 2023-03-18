@@ -1,31 +1,3 @@
-<template>
-
-      <div v-if="isLoading">Loading...</div>
-
-  <div v-else>
-        <div class="repos_container">
-      <div class="repos_card" v-for="repo in displayedRepositories" :key="repo.id">
-        <h2>{{repo.name}}</h2>
-        <button @click="router.push(`/data/${repo.id}`)" class="btn">See more</button>
-    
-      </div>
-      </div>
-      <div class="pagination_btns">
-
-      <button @click="previousPage" :disabled="currentPage === 1" >Prev</button>
- 
-      
-      <button v-for="pageNumber in pageNumbers" :key="pageNumber" @click="currentPage = pageNumber">{{ pageNumber }}</button>
-
-      
-      <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>
-    </div>
-    
-    </div>
-</template>
-
-
-
 
 <script setup>
 import { useFetchData } from './useFetchData.vue';
@@ -70,6 +42,32 @@ const nextPage = () => {
 };
 
 </script>
+
+<template>
+
+  <div v-if="isLoading">Loading...</div>
+
+<div v-else>
+    <div class="repos_container">
+  <div class="repos_card" v-for="repo in displayedRepositories" :key="repo.id">
+    <h2>{{repo.name}}</h2>
+    <button @click="router.push(`/data/${repo.id}`)" class="btn">See more</button>
+
+  </div>
+  </div>
+  <div class="pagination_btns">
+
+  <button @click="previousPage" :disabled="currentPage === 1" >Prev</button>
+
+  
+  <button v-for="pageNumber in pageNumbers" :key="pageNumber" @click="currentPage = pageNumber">{{ pageNumber }}</button>
+
+  
+  <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>
+</div>
+
+</div>
+</template>
 
 
 <style scoped>

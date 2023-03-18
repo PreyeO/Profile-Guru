@@ -1,3 +1,12 @@
+
+
+<script setup>
+import ProfileData from '../components/Data/ProfileData.vue';
+import NavBar from '../components/NavBar/NavBar.vue';
+
+
+</script>
+
 <template>
   <section>
     <NavBar />
@@ -8,17 +17,6 @@
   </main> 
     </section>
 </template>
-
-
-
-<script setup>
-import ProfileData from '../components/Data/ProfileData.vue';
-import NavBar from '../components/NavBar/NavBar.vue';
-
-
-</script>
-
-
 
 <style scoped>
 

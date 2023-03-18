@@ -1,4 +1,34 @@
-  <template>
+  
+<script setup>
+import { useRoute } from "vue-router";
+import { onMounted, ref } from "vue";
+import axios from "axios";
+
+
+ 
+const data = ref([]);
+const route=useRoute()
+const getRepo = async () => {
+  try {
+    const res = await axios.get("https://api.github.com/users/PreyeO/repos");
+    const repoId = parseInt(route.params.id);
+    const  repo = res.data.find(item => item.id === repoId);
+    data.value = repo;
+    console.log(repo)
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+
+onMounted(getRepo);
+
+function getRandomColor() {
+  return "hsl(" + Math.random() * 360 + ", 100%, 75%)";
+}
+</script>
+
+<template>
   <section>
     <div class="repo_close">
       <RouterLink to ="/repositories" ><font-awesome-icon icon="close" :size="100" /></RouterLink>
@@ -33,39 +63,8 @@
     </div>
   </section>
 </template>
-
-<script setup>
-import { useRoute } from "vue-router";
-import { onMounted, ref } from "vue";
-import axios from "axios";
-
-
- 
-const data = ref([]);
-const route=useRoute()
-const getRepo = async () => {
-  try {
-    const res = await axios.get("https://api.github.com/users/PreyeO/repos");
-    const repoId = parseInt(route.params.id);
-    const  repo = res.data.find(item => item.id === repoId);
-    data.value = repo;
-    console.log(repo)
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-
-onMounted(getRepo);
-
-function getRandomColor() {
-  return "hsl(" + Math.random() * 360 + ", 100%, 75%)";
-}
-</script>
   
 <style scoped>
-
-
 
  .container{
  background-color: var(--color-black);

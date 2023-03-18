@@ -1,6 +1,19 @@
+
+<script setup>
+import {ref} from 'vue'
+import {RouterLink} from 'vue-router'
+
+
+// const backgroundImage = ref('src/assets/Images/error.PNG');
+import error from '@/assets/Images/error.png'
+
+</script>
+
+
+
 <template>
   <div class="error_container">
-  <div class="background" :style="{ 'background-image': `url(${backgroundImage})` }">
+  <div class="background" :style="{ 'background-image': `url(${error})` }">
     <div class="container">
 
         
@@ -14,15 +27,6 @@
 </RouterLink>
 </div>
 </template>
-
-
-<script setup>
-import {ref} from 'vue'
-import {RouterLink} from 'vue-router'
-
-const backgroundImage = ref('src/assets/Images/error.PNG');
-
-</script>
 
 <style scoped>
 .background{

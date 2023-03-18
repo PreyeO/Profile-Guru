@@ -1,3 +1,19 @@
+
+<script setup>
+import {RouterLink} from 'vue-router'
+import {ref} from 'vue'
+
+
+
+
+const portfolioLink = ref('https://preyeomusuku.vercel.app/')
+
+   
+const isMenuOpen = ref(false);
+
+  
+</script>
+
 <template>
   <header>
     <nav  >
@@ -33,21 +49,6 @@
 
   </header>
 </template>
-
-
-<script setup>
-import {RouterLink} from 'vue-router'
-import {ref} from 'vue'
-
-
-
-const portfolioLink = ref('https://preyeomusuku.vercel.app/')
-
-   
-const isMenuOpen = ref(false);
-
-  
-</script>
 
 
 
