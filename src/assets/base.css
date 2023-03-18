@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@100&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+text-decoration: none;
+outline: 0;
+list-style: none;
+border: 0;
+letter-spacing: 1px;
+word-spacing: 1px;
+}
+:root{
+  --main-color:#1E1629;
+  --main-secondary-color:#342250;;
+  --light-color:#e2afff;
+  --color-bg:#0e1129;
+  --color-bg-variant:#002855;
+  --color-black:#2b2d42;
+  --color-primary:#b5179e;
+  --color-primary-variant:rgba(255,255,255,0.6);
+  --color-white:#f1f1f1;
+  --color-light:rgba(255,255,255,0.6);
+  --transition: all 40ms ease;
+  --container-width-lg:75%;
+  --container-width-md:86%;
+  --container-width-ms:90%;
+}
+
