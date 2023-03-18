@@ -3,10 +3,10 @@
 import { ref } from 'vue';
 import RandomProfileData from '../components/Data/RandomProfileData.vue';
 import Footer from '../components/Footer/Footer.vue';
-import error from '@/assets/Images/profiles.png'
 
 
-// const profilePicsPath = ref('src/assets/Images/profiles.png');
+
+const profilePicsPath = ref('src/assets/profiles.png');
 const GitHubHeader= ref("https://cdn3.iconfinder.com/data/icons/inficons/512/github.png")
 </script>
 
@@ -20,7 +20,7 @@ const GitHubHeader= ref("https://cdn3.iconfinder.com/data/icons/inficons/512/git
   <section>
       <div class="container">
     <div class="profile_images">
-    <img :src="error" alt="My Image" />
+    <img :src="profilePicsPath" alt="My Image" />
     </div>
   <RandomProfileData />
 </div>
