@@ -1,5 +1,5 @@
-
 <script setup>
+
 import { useFetchData } from './useFetchData.vue';
 import { useRouter } from 'vue-router';
 import { ref, computed } from 'vue';
