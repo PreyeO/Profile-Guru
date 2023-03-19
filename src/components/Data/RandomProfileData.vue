@@ -65,15 +65,12 @@ import {RouterLink} from 'vue-router'
     </RouterLink>
   </div>
     </div>
-    <div>
+    <div class="hero_image">
       <img :src='heroImage' alt="My Image"  />
     </div>
-    </div>
-   
-  
 
-    <div v-if="users"  class="card">
-      <div v-for="user in users" :key="user.id" >
+    <div v-if="users"  >
+      <div v-for="user in users" :key="user.id" class="card">
         <div class="home_link"><a :href='user.html_url' target="_blank"  rel="noreferrer" ><font-awesome-icon icon="external-link" /></a></div>
           <img v-bind:src='user.avatar_url' target="_blank" alt="" />
           <h4>{{ user.name }}</h4>
@@ -94,7 +91,7 @@ import {RouterLink} from 'vue-router'
          
         </div>
       </div>
-   
+    </div>
   </div>
 </template>
 
@@ -108,11 +105,11 @@ import {RouterLink} from 'vue-router'
   justify-content: space-around;
   margin: 0 auto;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 5rem;
   
   
 }
-.landing_container img{
+.hero_image img{
 width:40rem;
 height:40rem
 }
@@ -148,6 +145,8 @@ input{
   margin:0 auto;
   margin-top: 1rem;
   flex-direction: column;
+  position: relative;
+  align-items: center;
 
 }
  .inputs{
@@ -158,7 +157,6 @@ input{
 .card img{
   background-color: var(--color-white);
   border-radius: 10rem;
-  margin-top: 1.3rem;
   width: 10rem;
   cursor: pointer;
 }
@@ -184,6 +182,7 @@ h4{
   padding-top: 1rem;
   padding-right: 1rem;
 }
+
 h2{
   font-size: 4rem;
   line-height: 5rem;
@@ -226,9 +225,12 @@ br{
 #btns{
   width: 20rem;
 }
-.landing_container img{
+.hero_image img{
   width:30rem;
   height:30rem
+  }
+  .card{
+    transform: translateY(-20rem);
   }
 }
 
@@ -238,7 +240,13 @@ br{
     .input_container h2{
       text-align: start;
     }
- 
+    .input_container{
+      padding-left: 1rem;
+    }
+   
+    .card{
+      transform: translateX(-35rem);
+    }
 }
 
 
@@ -256,7 +264,7 @@ br{
       font-size: 1.5rem;
       text-align: center;
     }
-    .landing_container img{
+    .hero_image img{
       width:20rem;
       height:20rem;
       margin: 0 auto;
