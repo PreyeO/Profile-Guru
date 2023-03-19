@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router"
 import MyProfileView from "../Views/MyProfileView.vue"
-import AboutView from "../Views/AboutView.vue"
+import Error404View from "../Views/Error404View.vue"
 import RepositoriesView from "../Views/RepositoriesView.vue"
 import RepoView from "../Views/RepoView.vue"
 import LandingView from '../Views/LandingView.vue'
@@ -17,7 +17,7 @@ const router= createRouter({
     {
       path: '/:catchAll(.*)',
       name:"Not found",
-      component:AboutView
+      component:Error404View
     },
    
     {

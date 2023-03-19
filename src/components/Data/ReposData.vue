@@ -60,7 +60,7 @@ const nextPage = () => {
   <button @click="previousPage" :disabled="currentPage === 1" >Prev</button>
 
   
-  <button v-for="pageNumber in pageNumbers" :key="pageNumber" @click="currentPage = pageNumber">{{ pageNumber }}</button>
+  <span>{{ currentPage }} of {{ totalPages }}</span>
 
   
   <button @click="nextPage" :disabled="currentPage === totalPages">Next</button>
@@ -95,7 +95,6 @@ const nextPage = () => {
   flex-wrap: wrap;
   padding-top: 2rem;
   margin-top: 5rem;
-  border-bottom-left-radius: 10rem;
   overflow-x: hidden;
  z-index: 1rem;
 }
@@ -128,6 +127,10 @@ const nextPage = () => {
   background: var(--main-secondary-color);
   color:var(--white-color);
   transition: var(--transition);
+}
+span{
+  font-size: 1.3rem;
+  text-align: center;
 }
 
 
