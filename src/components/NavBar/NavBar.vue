@@ -111,8 +111,8 @@ button {
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(50, 40, 40, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    background-color:var(--main-color);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135,5);
     backdrop-filter: blur(5rem);
     justify-content: center;
     text-align: center;
@@ -133,8 +133,8 @@ button {
   .icons {
    position: relative;
     z-index: 1;
-    width: 2rem; 
     color: white;
+    font-size: 2rem;
   
   }
   
