@@ -29,10 +29,11 @@ function getRandomColor() {
 </script>
 
 <template>
+  <div class="repo_close">
+    <RouterLink to ="/repositories" ><font-awesome-icon icon="close" /></RouterLink>
+    </div>
   <section>
-    <div class="repo_close">
-      <RouterLink to ="/repositories" ><font-awesome-icon icon="close" :size="100" /></RouterLink>
-      </div>
+   
       <div class="repo_details_name">
     <h2>{{ data.name }}</h2>
   </div>
@@ -67,12 +68,16 @@ function getRandomColor() {
 <style scoped>
 
  .container{
- background-color: var(--color-black);
+ 
   max-width:80rem;
   min-height  :auto;
   margin:0 auto;
   margin-top: 5rem;
  
+}
+
+.repo_details_name{
+margin-top: 2rem;
 }
 
 .small_container{
@@ -97,14 +102,16 @@ border-top-right-radius: 5rem;
 .repo_cards h4{
   font-size: 2rem;
 }
+
 .repo_star {
   color: yellow;
   font-size: 7rem;
  
 }
 .repo_close a{
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-left: 1rem;
+
 }
 .repo_cards h2{
   font-size: 5rem;
@@ -128,6 +135,10 @@ h3{
   padding-top: 2rem;
   font-size: 1.5rem;
   padding-left: 3rem;
+  
+}
+.repo_close{
+  margin-top: 2rem;
 }
 
 @media screen and (max-width:700px) { 

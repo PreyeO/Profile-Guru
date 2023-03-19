@@ -18,8 +18,9 @@ const GitHubHeader= ref("https://cdn3.iconfinder.com/data/icons/inficons/512/git
    <div container>
   <RandomProfileData />
   </div>
+  <div class="footer">
 <Footer />
-  
+</div>
 </template>
 
 <style scoped>
@@ -66,6 +67,11 @@ position: relative;
  .users_header{
   text-align: center;
  }
+}
+@media screen and (max-width: 300px){
+.footer{
+    font-size: 1rem;    
+}
 }
 
 

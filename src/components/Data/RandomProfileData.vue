@@ -51,13 +51,13 @@ import {RouterLink} from 'vue-router'
 <template>
   <div class='landing_container'>
     <div class="input_container">
-      <h2>Search <br/> GitHub user Profile</h2>
+      <h2>Search <br/> GitHub User Profile</h2>
       <div class="inputs">
      <input type="text" placeholder="Enter github username" v-model="userInput" />
      <button @click="findUser" class="btn">search</button>
     </div>
     <div class="myprofile_btn">
-     <h2>View my Profile</h2>
+     <h2>View My Profile</h2>
      <RouterLink to ="/myprofile" >
       
         <button class="btn" id="btns">Click</button>
@@ -130,6 +130,10 @@ input{
 }
 .myprofile_btn{
   padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
 }
 .myprofile_btn button{
   margin-top: 3rem;
@@ -146,7 +150,7 @@ input{
   flex-direction: column;
 
 }
-.inputs{
+ .inputs{
   display:flex;
   justify-content: center;
   text-align: center;
@@ -236,27 +240,20 @@ br{
     }
  
 }
-@media screen and (max-width:370px){
-  h2{
-    font-size: 1.8rem;
-    text-align: center;
-  }
-  .landing_container img{
-    width:25rem;
-    height:25rem
-    }
-}
+
 
 @media screen and (min-width:750px) and (max-width:1000px){
   .landing_container{
     margin-top: 15rem;
-   
+  }
+  .card{
+    margin-top: 4rem;
   }
 }
 
-  @media screen and (max-width:283px){
+  @media screen and (max-width: 370px){
     h2{
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       text-align: center;
     }
     .landing_container img{
@@ -265,6 +262,20 @@ br{
       margin: 0 auto;
       text-align: center;
       }
+      .card{
+        width:20rem
+      }
+      .smaller_cards{
+        gap:1rem;
+        flex-direction: column;
+        margin-bottom: 1rem;
+      }
+      .smallest_cards{
+       width:15rem;
+       margin: 0 auto;
+      }
+    
+      
      
 }
 

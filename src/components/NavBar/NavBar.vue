@@ -17,28 +17,26 @@ const isMenuOpen = ref(false);
 
 <template>
   <header>
-    <nav  >
+    <nav>
+     
       <RouterLink to ="/" ><h3 id="logo">PDev<span class='logo-span'>/></span></h3></RouterLink>
    
-    <ul >
+    <ul>
       
       <RouterLink to ="/myprofile" active-class="active"><li>Home</li></RouterLink>
-      <RouterLink to ="*" active-class="active"><li>About</li></RouterLink>
       <RouterLink to ="/repositories" active-class="active"><li>Repos</li></RouterLink>
       <a :href="portfolioLink" target="_blank" rel="noreferrer"><li>Portfolio</li></a>
     </ul>
-    <button @click="isMenuOpen = !isMenuOpen">
-      <font-awesome-icon :icon="isMenuOpen ? 'close' : 'bars'" class="icon"/>
-
-    </button>
+  
    <div>
-    
+    <button @click="isMenuOpen = !isMenuOpen">
+      <font-awesome-icon :icon="isMenuOpen ? 'close' : 'bars'" class="icons" />
+     </button>
    </div>
  
     <div>
       <ul v-if="isMenuOpen" :aria-expanded="isMenuOpen" >
     <RouterLink to ="/myprofile" active-class="active"><li>Home</li></RouterLink>
-    <RouterLink to ="*" active-class="active"><li>About</li></RouterLink>
     <RouterLink to ="/repositories" active-class="active"><li>Repos</li></RouterLink>
     <a :href="portfolioLink" target="_blank" rel="noreferrer"><li>Portfolio</li></a>
     <ul>
@@ -94,14 +92,15 @@ button {
     display: none;
   }
 
-  buttong{
+  button{
     display: block;
     cursor:pointer;
-    background: transparent;
     width: 3rem;
     height: 2rem;
+    background: transparent;
     
   }
+  
  
 
   nav ul[aria-expanded='true'] {
@@ -117,6 +116,7 @@ button {
     backdrop-filter: blur(5rem);
     justify-content: center;
     text-align: center;
+  
     
   }
   li {
@@ -130,12 +130,12 @@ button {
     text-align: right;
     position: relative;
   }
-  .icon{
+  .icons {
    position: relative;
-    color:white;
     z-index: 1;
-    transform: translateX(15rem);
-    width: 2rem;
+    width: 2rem; 
+    color: white;
+  
   }
   
 }
