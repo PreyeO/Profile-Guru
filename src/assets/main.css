@@ -12,7 +12,8 @@ body{
   display:flex;
   flex-direction: column;
   flex-wrap: wrap;
-  overflow-x:hidden
+  overflow-x:hidden;
+  overflow: hidden;
 }
 html{
   font-size: 62.5%;   
