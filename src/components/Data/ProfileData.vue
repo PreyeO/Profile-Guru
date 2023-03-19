@@ -10,7 +10,7 @@ const now = new Date();
 </script>
 
 <template>
-  <div>
+  <div class="profile_data">
   <div v-if="isLoading">Loading...</div>
   <div v-else class="profile_info">
     <div key={{data.id}}>
@@ -55,6 +55,9 @@ img{
   margin-top: 1.3rem;
   width: 10rem;
   cursor: pointer;
+}
+.profile_data{
+  overflow: hidden;
 }
 
 img:hover{
