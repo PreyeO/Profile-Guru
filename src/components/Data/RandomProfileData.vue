@@ -119,7 +119,7 @@ height:40rem
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  gap:3rem
+  gap:1rem
 }
 input{
   width:30rem;
